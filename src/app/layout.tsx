@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import AutoKioskTour from '../components/AutoKioskTour';
 
 export const metadata: Metadata = {
   title: 'C-NET MULTIMEDIA COMPUTER EDUCATION CENTRE, LUDHIANA | NDLM India',
@@ -28,6 +29,8 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="min-h-screen bg-slate-50 text-slate-900 antialiased font-sans">
         {children}
+        {/* Automatic Presentation / Kiosk Tour Engine for TV & Big Displays */}
+        <AutoKioskTour />
       </body>
     </html>
   );
