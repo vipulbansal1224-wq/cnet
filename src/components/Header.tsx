@@ -94,14 +94,13 @@ export default function Header({ onOpenAdmission }: HeaderProps) {
             </div>
 
             {/* Name Details */}
-            <div className="space-y-1">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="bg-emerald-100 text-emerald-900 text-[10px] font-black px-2 py-0.5 rounded uppercase border border-emerald-300">
+            <div className="space-y-0.5">
+              <div className="flex items-center gap-2">
+                <span className="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase border border-emerald-300">
                   NDLM India Affiliated
                 </span>
-                {/* Highlighted Crisp "Hunar Hai To Kadar Hai" Badge */}
-                <span className="inline-flex items-center gap-1 bg-amber-400 text-slate-950 font-black text-xs px-2.5 py-0.5 rounded-md shadow-sm border border-amber-500">
-                  ★ &quot;हुनर है तो कदर है&quot;
+                <span className="text-[11px] text-amber-700 font-bold italic hidden sm:inline">
+                  &quot;हुनर है तो कदर है&quot;
                 </span>
               </div>
 
@@ -137,46 +136,49 @@ export default function Header({ onOpenAdmission }: HeaderProps) {
         </div>
       </div>
 
-      {/* 3. Dedicated Background Navigation Bar - Single Line ("Menu ko ek line mein kijye aur picche background lagaiye") */}
-      <div className="bg-gradient-to-r from-blue-900 via-indigo-950 to-blue-900 text-white shadow-md border-y-2 border-amber-400">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
-            
-            {/* Desktop Single-Line Menu with Rich Background & Distinct Look */}
-            <nav className="hidden lg:flex items-center whitespace-nowrap overflow-x-auto py-1 w-full justify-between">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`px-3.5 py-2.5 rounded-lg text-xs xl:text-sm font-bold tracking-wide transition-all duration-150 flex items-center gap-1 flex-shrink-0 ${
-                      isActive
-                        ? 'bg-amber-400 text-slate-950 font-black shadow-md'
-                        : 'text-slate-100 hover:bg-blue-800/80 hover:text-amber-300'
-                    }`}
-                  >
-                    <span>{link.label}</span>
-                  </Link>
-                );
-              })}
-            </nav>
+      {/* 3. Highlighted Beautiful Background Specifically Behind The Navigation Menu */}
+      <div className="bg-slate-100 py-2 px-2 sm:px-6 lg:px-8 border-b border-slate-300">
+        <div className="max-w-7xl mx-auto">
+          {/* Highlighted Menu Container */}
+          <div className="bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-950 text-white rounded-xl shadow-lg border-2 border-amber-400 px-2 py-1">
+            <div className="flex items-center justify-between">
+              
+              {/* Desktop Single-Line Menu with Rich Highlighted Background */}
+              <nav className="hidden lg:flex items-center whitespace-nowrap overflow-x-auto w-full justify-between">
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`px-3.5 py-2 rounded-lg text-xs xl:text-sm font-bold tracking-wide transition-all duration-150 flex items-center gap-1 flex-shrink-0 ${
+                        isActive
+                          ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black shadow-md'
+                          : 'text-white hover:bg-white/15 hover:text-amber-300'
+                      }`}
+                    >
+                      <span>{link.label}</span>
+                    </Link>
+                  );
+                })}
+              </nav>
 
-            {/* Mobile Menu Bar Button */}
-            <div className="lg:hidden flex items-center justify-between w-full py-2 px-2">
-              <span className="text-xs font-black text-amber-300 tracking-wider">
-                NAVIGATION MENU
-              </span>
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-1.5 rounded-lg bg-amber-400 text-slate-950 font-black text-xs flex items-center gap-1 shadow"
-                aria-label="Toggle navigation menu"
-              >
-                {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-                <span>{mobileMenuOpen ? 'CLOSE' : 'MENU'}</span>
-              </button>
+              {/* Mobile Menu Bar Button */}
+              <div className="lg:hidden flex items-center justify-between w-full py-1.5 px-2">
+                <span className="text-xs font-black text-amber-300 tracking-wider">
+                  NAVIGATION MENU
+                </span>
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="p-1.5 rounded-lg bg-amber-400 text-slate-950 font-black text-xs flex items-center gap-1 shadow"
+                  aria-label="Toggle navigation menu"
+                >
+                  {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+                  <span>{mobileMenuOpen ? 'CLOSE' : 'MENU'}</span>
+                </button>
+              </div>
+
             </div>
-
           </div>
         </div>
       </div>

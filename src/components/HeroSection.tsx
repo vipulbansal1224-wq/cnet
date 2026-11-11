@@ -79,18 +79,11 @@ export default function HeroSection({ onOpenAdmission }: HeroSectionProps) {
               <span className="text-amber-300 font-bold">Center Code: CNET-LDH-01</span>
             </div>
 
-            {/* Tagline Highlight Badge ("Hunar Hai To Kadar Hai" - Compact & Highlighted) */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-400 text-slate-950 font-black text-xs sm:text-sm shadow-md border-2 border-amber-300 tracking-wide">
-                <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
-                <span>&quot;हुनर है तो कदर है&quot;</span>
-                <span className="text-slate-800 font-bold">•</span>
-                <span className="text-slate-900 font-bold text-[11px] uppercase">Education for Life</span>
-              </span>
-            </div>
-
-            {/* Main Title */}
+            {/* Main Title with Hindi Tagline (Jaise pehle tha, par thoda sa chota) */}
             <div>
+              <div className="inline-block bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent font-bold text-lg sm:text-xl tracking-wide mb-1">
+                &quot;हुनर है तो कदर है&quot; — Education for Life
+              </div>
               <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-white">
                 C-NET Multimedia <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-amber-300">
