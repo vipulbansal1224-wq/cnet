@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { 
   Phone, 
   Mail, 
@@ -13,18 +14,7 @@ import {
   Sparkles
 } from 'lucide-react';
 
-interface FooterProps {
-  onOpenVerify: () => void;
-  onOpenExam: () => void;
-  onOpenAdmission: () => void;
-}
-
-export default function Footer({ onOpenVerify, onOpenExam, onOpenAdmission }: FooterProps) {
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
-
+export default function Footer() {
   return (
     <footer className="bg-slate-950 text-slate-400 border-t border-slate-800 text-xs sm:text-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -33,7 +23,7 @@ export default function Footer({ onOpenVerify, onOpenExam, onOpenAdmission }: Fo
           
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-700 to-amber-500 flex items-center justify-center text-white font-black text-lg">
                 C
               </div>
@@ -45,14 +35,14 @@ export default function Footer({ onOpenVerify, onOpenExam, onOpenAdmission }: Fo
                   Computer Education Centre • Ludhiana
                 </p>
               </div>
-            </div>
+            </Link>
 
             <p className="text-xs text-slate-400 leading-relaxed">
               Partner of the National Digital Literacy Mission (NDLM). Committed to delivering high-quality, practical computer literacy, financial accounting (Tally & GST), and competitive computer credentials to empower rural and urban youth.
             </p>
 
             <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1 text-xs">
-              <p className="text-amber-400 font-bold">&quot;हुनर है तो कदर है&quot;</p>
+              <p className="text-amber-400 font-bold font-hind">&quot;हुनर है तो कदर है&quot;</p>
               <p className="text-slate-400">Center Code: <span className="text-white font-mono font-bold">CNET-LDH-01</span></p>
             </div>
           </div>
@@ -60,62 +50,80 @@ export default function Footer({ onOpenVerify, onOpenExam, onOpenAdmission }: Fo
           {/* Col 2: Quick Links */}
           <div className="lg:col-span-3 space-y-3">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider">
-              Quick Portals & Tools
+              Navigation Pages
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <button 
-                  onClick={onOpenVerify} 
+                <Link 
+                  href="/verify-certificate" 
                   className="hover:text-emerald-400 transition flex items-center gap-1.5 font-semibold text-emerald-400"
                 >
                   <ChevronRight className="w-3.5 h-3.5" />
                   <span>Verify Student Certificate</span>
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={onOpenExam} 
+                <Link 
+                  href="/online-paper" 
                   className="hover:text-blue-400 transition flex items-center gap-1.5 font-semibold text-blue-400"
                 >
                   <ChevronRight className="w-3.5 h-3.5" />
                   <span>Online CCC Mock Test Paper</span>
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={onOpenAdmission} 
+                <Link 
+                  href="/student-corner" 
                   className="hover:text-white transition flex items-center gap-1.5"
                 >
                   <ChevronRight className="w-3.5 h-3.5" />
-                  <span>Student&apos;s Corner & Admission</span>
-                </button>
+                  <span>Student&apos;s Corner &amp; Login</span>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollTo('courses')} 
+                <Link 
+                  href="/courses" 
                   className="hover:text-white transition flex items-center gap-1.5"
                 >
                   <ChevronRight className="w-3.5 h-3.5" />
-                  <span>Diploma & Certificate Courses</span>
-                </button>
+                  <span>Diploma &amp; Certificate Courses</span>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollTo('itworld')} 
+                <Link 
+                  href="/it-world" 
                   className="hover:text-white transition flex items-center gap-1.5"
                 >
                   <ChevronRight className="w-3.5 h-3.5" />
                   <span>IT World (आईटी ज्ञान और टिप्स)</span>
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollTo('gallery')} 
+                <Link 
+                  href="/gallery" 
                   className="hover:text-white transition flex items-center gap-1.5"
                 >
                   <ChevronRight className="w-3.5 h-3.5" />
                   <span>Campus Photo Gallery</span>
-                </button>
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/about" 
+                  className="hover:text-white transition flex items-center gap-1.5"
+                >
+                  <ChevronRight className="w-3.5 h-3.5" />
+                  <span>About Our Mission</span>
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/contact" 
+                  className="hover:text-white transition flex items-center gap-1.5"
+                >
+                  <ChevronRight className="w-3.5 h-3.5" />
+                  <span>Contact Campus</span>
+                </Link>
               </li>
             </ul>
           </div>
@@ -133,7 +141,7 @@ export default function Footer({ onOpenVerify, onOpenExam, onOpenAdmission }: Fo
               <li>Advanced Excel & MIS</li>
               <li>AutoCAD 2D & 3D</li>
               <li>DTP Graphic Design</li>
-              <li>'O' Level Diploma</li>
+              <li>&apos;O&apos; Level Diploma</li>
             </ul>
           </div>
 
@@ -175,7 +183,7 @@ export default function Footer({ onOpenVerify, onOpenExam, onOpenAdmission }: Fo
           <div className="flex items-center gap-4">
             <span>Affiliation: NDLM India</span>
             <span>•</span>
-            <span>Education for Life</span>
+            <span className="font-hind">&quot;हुनर है तो कदर है&quot;</span>
           </div>
         </div>
 

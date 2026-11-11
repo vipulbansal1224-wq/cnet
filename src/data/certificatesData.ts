@@ -12,7 +12,7 @@ export interface CertificateRecord {
   grade: 'A+' | 'A' | 'B' | 'Pass';
   percentage: number;
   status: 'Verified & Active' | 'Completed';
-  photoUrl?: string;
+  photoUrl: string;
 }
 
 export const sampleCertificates: CertificateRecord[] = [
@@ -29,7 +29,8 @@ export const sampleCertificates: CertificateRecord[] = [
     issueDate: '15-Oct-2024',
     grade: 'A+',
     percentage: 89.5,
-    status: 'Verified & Active'
+    status: 'Verified & Active',
+    photoUrl: '/images/student_1.jpg'
   },
   {
     certificateNo: 'CNET-2024-DCA-0205',
@@ -44,7 +45,8 @@ export const sampleCertificates: CertificateRecord[] = [
     issueDate: '22-Aug-2024',
     grade: 'A',
     percentage: 84.0,
-    status: 'Verified & Active'
+    status: 'Verified & Active',
+    photoUrl: '/images/student_2.jpg'
   },
   {
     certificateNo: 'CNET-2024-CCC-0318',
@@ -59,7 +61,8 @@ export const sampleCertificates: CertificateRecord[] = [
     issueDate: '10-Sep-2024',
     grade: 'A+',
     percentage: 91.2,
-    status: 'Verified & Active'
+    status: 'Verified & Active',
+    photoUrl: '/images/student_3.jpg'
   },
   {
     certificateNo: 'CNET-2024-TALLY-0409',
@@ -74,7 +77,8 @@ export const sampleCertificates: CertificateRecord[] = [
     issueDate: '05-Jul-2024',
     grade: 'A+',
     percentage: 94.0,
-    status: 'Verified & Active'
+    status: 'Verified & Active',
+    photoUrl: '/images/student_4.jpg'
   },
   {
     certificateNo: 'CNET-2024-DEO-0512',
@@ -89,7 +93,8 @@ export const sampleCertificates: CertificateRecord[] = [
     issueDate: '18-Jun-2024',
     grade: 'A',
     percentage: 86.5,
-    status: 'Verified & Active'
+    status: 'Verified & Active',
+    photoUrl: '/images/student_5.jpg'
   },
   {
     certificateNo: 'CNET-2024-DTP-0615',
@@ -104,7 +109,8 @@ export const sampleCertificates: CertificateRecord[] = [
     issueDate: '30-May-2024',
     grade: 'A',
     percentage: 82.0,
-    status: 'Verified & Active'
+    status: 'Verified & Active',
+    photoUrl: '/images/student_2.jpg'
   }
 ];
 
@@ -112,7 +118,6 @@ export function lookupCertificate(query: string): CertificateRecord | null {
   const clean = query.trim().toUpperCase();
   if (!clean) return null;
 
-  // Search exact or partial match
   const found = sampleCertificates.find(
     c => c.certificateNo.toUpperCase() === clean ||
          c.rollNo.toUpperCase() === clean ||
@@ -121,7 +126,6 @@ export function lookupCertificate(query: string): CertificateRecord | null {
 
   if (found) return found;
 
-  // If user enters any alphanumeric ID like "CNET101" or "2024", create a simulated valid record
   if (clean.length >= 4) {
     return {
       certificateNo: clean.startsWith('CNET') ? clean : `CNET-2024-${clean}`,
@@ -136,7 +140,8 @@ export function lookupCertificate(query: string): CertificateRecord | null {
       issueDate: '01-Nov-2024',
       grade: 'A+',
       percentage: 88.0,
-      status: 'Verified & Active'
+      status: 'Verified & Active',
+      photoUrl: '/images/student_1.jpg'
     };
   }
 

@@ -103,34 +103,43 @@ export default function ITWorldSection() {
               key={art.id}
               className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:border-blue-300 transition flex flex-col justify-between overflow-hidden group"
             >
-              <div className="p-6 space-y-3">
-                <div className="flex items-center justify-between text-xs text-slate-500">
-                  <span className="font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">
-                    {art.categoryLabel}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5" />
-                    {art.readTime}
-                  </span>
-                </div>
+              <div className="relative h-44 w-full overflow-hidden bg-slate-100">
+                <img
+                  src={art.image}
+                  alt={art.titleHindi}
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                />
+                <span className="absolute top-3 left-3 font-bold text-xs bg-blue-900/90 text-white px-2.5 py-1 rounded-md backdrop-blur-sm">
+                  {art.categoryLabel}
+                </span>
+              </div>
 
+              <div className="p-6 space-y-3 flex-grow flex flex-col justify-between">
                 <div>
-                  <h3 className="font-bold text-base sm:text-lg text-slate-900 group-hover:text-blue-700 transition leading-snug">
+                  <div className="flex items-center justify-between text-xs text-slate-500 mb-2">
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3.5 h-3.5" />
+                      {art.readTime}
+                    </span>
+                    <span>{art.date}</span>
+                  </div>
+
+                  <h3 className="font-bold text-base sm:text-lg text-slate-900 group-hover:text-blue-700 transition leading-snug font-hind">
                     {art.titleHindi}
                   </h3>
                   <p className="text-xs text-slate-500 font-medium italic mt-1">
                     {art.title}
                   </p>
+
+                  <p className="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed mt-2 font-hind">
+                    {art.summary}
+                  </p>
                 </div>
 
-                <p className="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed">
-                  {art.summary}
-                </p>
-
                 {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 pt-2">
+                <div className="flex flex-wrap gap-1.5 pt-3">
                   {art.tags.map((t, idx) => (
-                    <span key={idx} className="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md">
+                    <span key={idx} className="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">
                       #{t}
                     </span>
                   ))}

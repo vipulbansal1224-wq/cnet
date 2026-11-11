@@ -4,6 +4,7 @@ export interface ITArticle {
   categoryLabel: string;
   title: string;
   titleHindi: string;
+  image: string;
   readTime: string;
   date: string;
   author: string;
@@ -19,6 +20,7 @@ export const itArticles: ITArticle[] = [
     categoryLabel: 'IT ज्ञान',
     title: 'Supercomputers: Everything You Need to Know',
     titleHindi: 'सुपर कम्प्यूटर के बारे में जाने - कार्यप्रणाली और उपयोग',
+    image: '/images/news_supercomputer.jpg',
     readTime: '4 min read',
     date: 'Updated Nov 2024',
     author: 'C-NET Technical Faculty',
@@ -38,6 +40,7 @@ export const itArticles: ITArticle[] = [
     categoryLabel: 'टिप्स & ट्रिक्स',
     title: 'How to Speed Up Slow Windows Computer in 1-Click',
     titleHindi: 'एक क्लिक के साथ कंप्यूटर की गति कैसे बढ़ाए? प्रैक्टिकल गाइड',
+    image: '/images/news_speedup.jpg',
     readTime: '3 min read',
     date: 'Updated Oct 2024',
     author: 'Chandan Kumar (Director)',
@@ -58,6 +61,7 @@ export const itArticles: ITArticle[] = [
     categoryLabel: 'रोचक तथ्य',
     title: 'Inspiring Facts About Sundar Pichai (Google & Alphabet CEO)',
     titleHindi: 'सुंदर पिचाई के बारे में ये बातें आपको जरूर जाननी चाहिये',
+    image: '/images/news_sundarpichai.jpg',
     readTime: '5 min read',
     date: 'Updated Sep 2024',
     author: 'Editorial Desk',
@@ -77,6 +81,7 @@ export const itArticles: ITArticle[] = [
     categoryLabel: 'टिप्स & ट्रिक्स',
     title: 'How to Recover Saved Forgotten Wi-Fi Password in Windows',
     titleHindi: 'भूला हुआ Wi-Fi पासवर्ड पुनः प्राप्त कैसे करे? CMD ट्रिक',
+    image: '/images/news_wifi.jpg',
     readTime: '2 min read',
     date: 'Updated Aug 2024',
     author: 'C-NET Lab Instructor',
@@ -91,11 +96,31 @@ export const itArticles: ITArticle[] = [
     ]
   },
   {
+    id: 'history-of-computer',
+    category: 'it-gyan',
+    categoryLabel: 'IT ज्ञान',
+    title: 'History of Computer: From Abacus to AI',
+    titleHindi: 'कंप्यूटर का इतिहास (History of Computer)',
+    image: '/images/news_history.jpg',
+    readTime: '4 min read',
+    date: 'Updated Aug 2024',
+    author: 'C-NET History Desk',
+    summary: 'अबेकस और चार्ल्स बैबेज के एनालिटिकल इंजन से लेकर पहली पीढ़ी के वैक्यूम ट्यूब्स और आज के आर्टिफिशियल इंटेलिजेंस तक कंप्यूटर का विकास।',
+    tags: ['History', 'Charles Babbage', 'Generations', 'ENIAC'],
+    content: [
+      'कंप्यूटर का इतिहास लगभग 4000 वर्ष पूर्व प्राचीन अबेकस (Abacus) से प्रारंभ हुआ था, जिसका उपयोग केवल जोड़ और घटाव के लिए किया जाता था।',
+      '1833 में ब्रिटिश गणितज्ञ चार्ल्स बैबेज ने "एनालिटिकल इंजन" की रूपरेखा बनाई, जिसमें इनपुट, मेमोरी, प्रोसेसर और आउटपुट का आधुनिक ढांचा था। इसलिए उन्हें "कंप्यूटर का जनक" (Father of Computer) कहा जाता है।',
+      'कंप्यूटर की 5 पीढ़ियां:\n• प्रथम पीढ़ी (1940-1956): वैक्यूम ट्यूब्स (ENIAC, UNIVAC)\n• द्वितीय पीढ़ी (1956-1963): ट्रांजिस्टर\n• तृतीय पीढ़ी (1964-1971): इंटीग्रेटेड सर्किट (IC)\n• चतुर्थ पीढ़ी (1971-वर्तमान): माइक्रोप्रोसेसर और VLSI (Personal Computers)\n• पंचम पीढ़ी (वर्तमान-भविष्य): आर्टिफिशियल इंटेलिजेंस (AI) और क्वांटम कंप्यूटिंग।',
+      'C-NET के छात्रों को कंप्यूटर फंडामेंटल्स में इन सभी ऐतिहासिक मील के पत्थरों का गहन अध्ययन कराया जाता है।'
+    ]
+  },
+  {
     id: 'open-source-foss',
     category: 'software',
     categoryLabel: 'सॉफ्टवेयर जगत',
     title: 'What is FOSS & Open Source Software?',
     titleHindi: 'क्या होता है ओपन सोर्स सॉफ्टवेयर (FOSS)? उपयोग और लाभ',
+    image: '/images/news_opensource.jpg',
     readTime: '4 min read',
     date: 'Updated Jul 2024',
     author: 'C-NET Research Group',
@@ -114,7 +139,8 @@ export const itArticles: ITArticle[] = [
     category: 'quiz-facts',
     categoryLabel: 'रोचक तथ्य',
     title: '10 Fascinating Facts About Email History',
-    titleHindi: 'ईमेल के बारे में 10 रोचक तथ्य और ऐतिहासिक जानकारी',
+    titleHindi: 'ईमेल के बारे 10 रोचक तथ्य और ऐतिहासिक जानकारी',
+    image: '/images/news_email.jpg',
     readTime: '3 min read',
     date: 'Updated Jun 2024',
     author: 'IT World Team',
