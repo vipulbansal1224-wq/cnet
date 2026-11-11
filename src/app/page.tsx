@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import MarqueeTicker from '../components/MarqueeTicker';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
+import IssuedCertificatesTable from '../components/IssuedCertificatesTable';
 import Link from 'next/link';
 import { 
   BookOpen, 
@@ -18,16 +19,17 @@ import {
   ArrowRight, 
   CheckCircle, 
   Award,
-  Sparkles
+  Sparkles,
+  FileCheck
 } from 'lucide-react';
 import { coursesData } from '../data/coursesData';
 import { itArticles } from '../data/articlesData';
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-amber-400 selection:text-slate-950">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-amber-400 selection:text-slate-950">
       
-      {/* Sticky Header */}
+      {/* Sticky Header with Left Logo/Name & Right Action Buttons + Single-Line Background Menu */}
       <Header />
 
       {/* Real-time Ticker */}
@@ -40,73 +42,73 @@ export default function Home() {
         <HeroSection />
 
         {/* Quick Portal Navigation Grid */}
-        <section className="py-12 bg-white border-b border-slate-200">
+        <section className="py-10 bg-white border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
               
               <Link 
                 href="/courses" 
-                className="group p-5 rounded-2xl bg-slate-50 hover:bg-blue-50 border border-slate-200/90 hover:border-blue-300 transition text-center space-y-2 shadow-sm"
+                className="group p-4 sm:p-5 rounded-2xl bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 transition text-center space-y-2 shadow-sm"
               >
                 <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center mx-auto group-hover:scale-110 transition">
                   <BookOpen className="w-6 h-6" />
                 </div>
-                <h3 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-blue-700">Courses</h3>
+                <h3 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-blue-700">COURSES</h3>
                 <p className="text-[11px] text-slate-500">ADCA, DCA, Tally</p>
               </Link>
 
               <Link 
                 href="/verify-certificate" 
-                className="group p-5 rounded-2xl bg-slate-50 hover:bg-emerald-50 border border-slate-200/90 hover:border-emerald-300 transition text-center space-y-2 shadow-sm"
+                className="group p-4 sm:p-5 rounded-2xl bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 transition text-center space-y-2 shadow-sm"
               >
                 <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto group-hover:scale-110 transition">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
-                <h3 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-emerald-700">Verify Marksheet</h3>
+                <h3 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-emerald-700">VERIFY CERTIFICATE</h3>
                 <p className="text-[11px] text-slate-500">24x7 Digital Check</p>
               </Link>
 
               <Link 
                 href="/online-paper" 
-                className="group p-5 rounded-2xl bg-slate-50 hover:bg-indigo-50 border border-slate-200/90 hover:border-indigo-300 transition text-center space-y-2 shadow-sm"
+                className="group p-4 sm:p-5 rounded-2xl bg-slate-50 hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 transition text-center space-y-2 shadow-sm"
               >
                 <div className="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center mx-auto group-hover:scale-110 transition">
                   <Laptop className="w-6 h-6" />
                 </div>
-                <h3 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-indigo-700">Online Paper</h3>
+                <h3 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-indigo-700">ONLINE PAPER</h3>
                 <p className="text-[11px] text-slate-500">CCC Mock Test CBT</p>
               </Link>
 
               <Link 
                 href="/student-corner" 
-                className="group p-5 rounded-2xl bg-slate-50 hover:bg-purple-50 border border-slate-200/90 hover:border-purple-300 transition text-center space-y-2 shadow-sm"
+                className="group p-4 sm:p-5 rounded-2xl bg-slate-50 hover:bg-purple-50 border border-slate-200 hover:border-purple-300 transition text-center space-y-2 shadow-sm"
               >
                 <div className="w-12 h-12 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center mx-auto group-hover:scale-110 transition">
                   <UserCheck className="w-6 h-6" />
                 </div>
-                <h3 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-purple-700">Student&apos;s Corner</h3>
+                <h3 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-purple-700">STUDENT&apos;S CORNER</h3>
                 <p className="text-[11px] text-slate-500">Login &amp; Attendance</p>
               </Link>
 
               <Link 
                 href="/it-world" 
-                className="group p-5 rounded-2xl bg-slate-50 hover:bg-amber-50 border border-slate-200/90 hover:border-amber-300 transition text-center space-y-2 shadow-sm"
+                className="group p-4 sm:p-5 rounded-2xl bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 transition text-center space-y-2 shadow-sm"
               >
                 <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mx-auto group-hover:scale-110 transition">
                   <Lightbulb className="w-6 h-6" />
                 </div>
-                <h3 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-amber-700 font-hind">IT ज्ञान</h3>
-                <p className="text-[11px] text-slate-500">Tips &amp; Facts</p>
+                <h3 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-amber-700">IT ज्ञान &amp; FACTS</h3>
+                <p className="text-[11px] text-slate-500">50 रोचक तथ्य &amp; Tips</p>
               </Link>
 
               <Link 
                 href="/gallery" 
-                className="group p-5 rounded-2xl bg-slate-50 hover:bg-rose-50 border border-slate-200/90 hover:border-rose-300 transition text-center space-y-2 shadow-sm"
+                className="group p-4 sm:p-5 rounded-2xl bg-slate-50 hover:bg-rose-50 border border-slate-200 hover:border-rose-300 transition text-center space-y-2 shadow-sm"
               >
                 <div className="w-12 h-12 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center mx-auto group-hover:scale-110 transition">
                   <Camera className="w-6 h-6" />
                 </div>
-                <h3 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-rose-700">Gallery</h3>
+                <h3 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-rose-700">PHOTO GALLERY</h3>
                 <p className="text-[11px] text-slate-500">Original Lab Photos</p>
               </Link>
 
@@ -114,71 +116,137 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Institutional Mission Snapshot */}
-        <section className="py-16 bg-slate-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              
-              <div className="lg:col-span-6 space-y-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-100 px-3 py-1 rounded-full">
-                  About Our Institution
+        {/* 1. DEDICATED ISSUED CERTIFICATES DISPLAY SECTION ("Jinko Certificate Issue Hue Hai Vo Bhi Display Kijiye") */}
+        <section className="py-16 bg-slate-100 border-b border-slate-300">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-300">
+                  Student Verification
                 </span>
-                <h2 className="text-3xl font-extrabold text-slate-900 leading-tight">
-                  High-Impact Computer Literacy for Rural &amp; Urban Youth
+                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2">
+                  Recently Issued Certificates (हाल ही में जारी किए गए प्रमाण पत्र)
                 </h2>
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                  <strong>C-NET MULTIMEDIA COMPUTER EDUCATION CENTRE, LUDHIANA®</strong> was founded with the mission of educating youth in rural parts of eastern U.P. and Punjab. We believe that technology education should be accessible on nominal fee structures.
+                <p className="text-xs sm:text-sm text-slate-600">
+                  Click &apos;Verify&apos; on any student to view their authentic digitized marksheet with QR verification code.
                 </p>
-                <blockquote className="border-l-4 border-amber-500 pl-4 py-2 bg-amber-50 rounded-r-lg text-slate-800 italic text-sm font-medium font-hind">
-                  &quot;More than 2000 successful students are living evidence of our commitment and quality education. &apos;Education for Life&apos; is the key of our education.&quot;
-                </blockquote>
-                <div className="pt-2">
-                  <Link
-                    href="/about"
-                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-700 hover:text-blue-900"
-                  >
-                    <span>Read Full About Us Page</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
               </div>
 
-              <div className="lg:col-span-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="rounded-2xl overflow-hidden shadow border border-slate-200">
-                    <img 
-                      src="/images/gallery_1149.jpg" 
-                      alt="C-NET Computer Practical Lab" 
-                      className="w-full h-44 object-cover"
-                    />
-                    <div className="p-3 bg-white text-xs font-bold text-slate-800">
-                      100% Practical Computer Lab
-                    </div>
-                  </div>
+              <Link
+                href="/verify-certificate"
+                className="inline-flex items-center gap-1.5 bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs sm:text-sm px-4 py-2 rounded-xl shadow transition"
+              >
+                <span>Search Any Roll Number</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
 
-                  <div className="rounded-2xl overflow-hidden shadow border border-slate-200">
-                    <img 
-                      src="/images/gallery_1150.jpg" 
-                      alt="Director Chandan Kumar" 
-                      className="w-full h-44 object-cover"
-                    />
-                    <div className="p-3 bg-white text-xs font-bold text-slate-800">
-                      Certificate Convocation
-                    </div>
-                  </div>
-                </div>
+            {/* Complete Issued Certificates Table Component */}
+            <IssuedCertificatesTable />
+          </div>
+        </section>
+
+        {/* 2. DEDICATED IT FACTS & KNOWLEDGE SHOWCASE ("IT Facts Jo Jankari Di Gayi Hai Vo Sari Poori Dikhaiye") */}
+        <section className="py-16 bg-white border-b border-slate-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
+                  IT World • रोचक तथ्य
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2">
+                  कंप्यूटर एवं मोबाइल के रोचक तथ्य (Complete IT Facts)
+                </h2>
+                <p className="text-xs sm:text-sm text-slate-600">
+                  Read complete authentic facts from C-NET IT World: 50 fun facts, mobile history, Sundar Pichai, email facts, Wi-Fi recovery &amp; supercomputers.
+                </p>
               </div>
 
+              <Link
+                href="/it-world"
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-blue-700 hover:text-blue-900"
+              >
+                <span>Open Full IT World Portal</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Highlights Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {itArticles.slice(0, 3).map((art) => (
+                <div
+                  key={art.id}
+                  className="rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition bg-white flex flex-col justify-between group"
+                >
+                  <div className="h-48 w-full bg-slate-100 overflow-hidden relative">
+                    <img
+                      src={art.image}
+                      alt={art.titleHindi}
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                    />
+                    <span className="absolute top-3 left-3 bg-blue-900/90 text-white font-bold text-xs px-2.5 py-1 rounded-md">
+                      {art.categoryLabel}
+                    </span>
+                  </div>
+
+                  <div className="p-6 space-y-2.5 flex-grow">
+                    <div className="flex items-center justify-between text-xs text-slate-400">
+                      <span>{art.readTime}</span>
+                      <span>{art.date}</span>
+                    </div>
+
+                    <h3 className="font-bold text-base sm:text-lg text-slate-900 group-hover:text-blue-700 transition line-clamp-2">
+                      {art.titleHindi}
+                    </h3>
+
+                    <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
+                      {art.summary}
+                    </p>
+                  </div>
+
+                  <div className="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                    <span className="text-[11px] text-slate-500 font-bold">50+ Facts Included</span>
+                    <Link
+                      href="/it-world"
+                      className="inline-flex items-center gap-1 text-xs font-bold text-blue-700 hover:text-blue-900"
+                    >
+                      <span>पूरा लेख पढ़ें &rarr;</span>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Quick 50 Facts Banner */}
+            <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white p-6 sm:p-8 rounded-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="space-y-1 text-center md:text-left">
+                <span className="bg-amber-400 text-slate-950 font-black text-xs px-2.5 py-0.5 rounded uppercase">
+                  Top 50 Random Fun Facts
+                </span>
+                <h3 className="text-xl sm:text-2xl font-black text-white">
+                  कंप्यूटर के बारे में 50 रोचक तथ्य (Full 50 Points List)
+                </h3>
+                <p className="text-xs text-slate-300">
+                  संगणक, 5MB पहली हार्ड डिस्क, लकड़ी का पहला माउस, इंटरनेट और QWERTY कीबोर्ड के सभी 50 बिंदु पढ़ें।
+                </p>
+              </div>
+
+              <Link
+                href="/it-world"
+                className="bg-amber-400 hover:bg-amber-300 text-slate-950 font-black px-6 py-3 rounded-xl text-xs sm:text-sm transition shadow-lg flex-shrink-0"
+              >
+                Read All 50 Facts Now &rarr;
+              </Link>
             </div>
           </div>
         </section>
 
         {/* Featured Courses Showcase */}
-        <section className="py-16 bg-white border-y border-slate-200">
+        <section className="py-16 bg-slate-50 border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-4">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                <span className="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-100 px-3 py-1 rounded-full border border-blue-200">
                   Career Programs
                 </span>
                 <h2 className="text-3xl font-extrabold text-slate-900 mt-2">
@@ -208,7 +276,7 @@ export default function Home() {
                       <span className="text-xs text-amber-600 font-bold">★ {course.badge}</span>
                     </div>
                     <h3 className="text-lg font-bold text-slate-900">{course.title}</h3>
-                    <p className="text-xs text-slate-500 font-medium font-hind">{course.hindiTitle}</p>
+                    <p className="text-xs text-slate-500 font-medium">{course.hindiTitle}</p>
                     <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">{course.description}</p>
                   </div>
                   <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
@@ -222,94 +290,6 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Featured IT World Articles with Original Images */}
-        <section className="py-16 bg-slate-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-4">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-3 py-1 rounded-full font-hind">
-                  ज्ञान एवं शिक्षा
-                </span>
-                <h2 className="text-3xl font-extrabold text-slate-900 mt-2 font-hind">
-                  IT World — नवीनतम तकनीकी लेख
-                </h2>
-              </div>
-              <Link
-                href="/it-world"
-                className="inline-flex items-center gap-1.5 text-sm font-bold text-blue-700 hover:text-blue-900"
-              >
-                <span>Read All IT Articles</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {itArticles.slice(0, 3).map((art) => (
-                <div
-                  key={art.id}
-                  className="rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition bg-white flex flex-col justify-between"
-                >
-                  <div className="h-44 w-full bg-slate-100 overflow-hidden">
-                    <img
-                      src={art.image}
-                      alt={art.titleHindi}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-5 space-y-2 flex-grow">
-                    <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-blue-50 text-blue-700">
-                      {art.categoryLabel}
-                    </span>
-                    <h3 className="font-bold text-base text-slate-900 font-hind line-clamp-2">
-                      {art.titleHindi}
-                    </h3>
-                    <p className="text-xs text-slate-600 line-clamp-2 font-hind">
-                      {art.summary}
-                    </p>
-                  </div>
-                  <div className="px-5 py-3 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs">
-                    <span className="text-slate-400">{art.readTime}</span>
-                    <Link
-                      href="/it-world"
-                      className="font-bold text-blue-700 hover:underline"
-                    >
-                      पूरा पढ़ें &rarr;
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Verification & Online Exam CTA Banner */}
-        <section className="py-16 bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <h2 className="text-3xl sm:text-4xl font-black">
-              Authenticate Your Certificate or Practice CCC Online
-            </h2>
-            <p className="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base">
-              Employers can instantly verify credentials issued by C-NET Ludhiana. Students can test their readiness on our online CBT exam platform.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 pt-2">
-              <Link
-                href="/verify-certificate"
-                className="bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold px-6 py-3 rounded-xl transition shadow flex items-center gap-2 text-sm"
-              >
-                <ShieldCheck className="w-5 h-5" />
-                <span>Verify Student Certificate</span>
-              </Link>
-              <Link
-                href="/online-paper"
-                className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3 rounded-xl transition shadow flex items-center gap-2 text-sm"
-              >
-                <Laptop className="w-5 h-5" />
-                <span>Launch CCC Mock Exam</span>
-              </Link>
             </div>
           </div>
         </section>

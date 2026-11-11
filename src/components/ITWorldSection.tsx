@@ -206,6 +206,29 @@ export default function ITWorldSection() {
                       {para}
                     </p>
                   ))}
+
+                  {/* Complete Numbered Facts List (If available) */}
+                  {activeArticle.factsList && activeArticle.factsList.length > 0 && (
+                    <div className="pt-4 space-y-3">
+                      <h4 className="font-bold text-base text-slate-900 border-b pb-2 flex items-center gap-2">
+                        <Sparkles className="w-5 h-5 text-amber-500" />
+                        <span>सभी 50 महत्वपूर्ण रोचक तथ्य (Full 50 Fun Facts):</span>
+                      </h4>
+                      <div className="grid grid-cols-1 gap-2.5">
+                        {activeArticle.factsList.map((fact, idx) => (
+                          <div 
+                            key={idx} 
+                            className="p-3 bg-slate-50 hover:bg-amber-50/50 rounded-xl border border-slate-200/80 text-xs sm:text-sm font-medium text-slate-800 transition leading-snug flex items-start gap-2.5"
+                          >
+                            <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-800 font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                              {idx + 1}
+                            </span>
+                            <span>{fact.replace(/^\d+[\.\-]\s*/, '')}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Tags & Feedback */}
