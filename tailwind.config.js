@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import('next').Config} */
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Arial', 'Helvetica', 'sans-serif'],
+        arial: ['Arial', 'Helvetica', 'sans-serif'],
+      },
       colors: {
         brand: {
           50: '#eff6ff',
@@ -19,9 +23,6 @@ module.exports = {
           accent: '#f59e0b',
           crimson: '#dc2626'
         }
-      },
-      fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       }
     },
   },
