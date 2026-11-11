@@ -94,13 +94,14 @@ export default function Header({ onOpenAdmission }: HeaderProps) {
             </div>
 
             {/* Name Details */}
-            <div className="space-y-0.5">
-              <div className="flex items-center gap-2">
-                <span className="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded uppercase border border-emerald-300">
+            <div className="space-y-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="bg-emerald-100 text-emerald-900 text-[10px] font-black px-2 py-0.5 rounded uppercase border border-emerald-300">
                   NDLM India Affiliated
                 </span>
-                <span className="text-[11px] text-amber-700 font-bold italic hidden sm:inline">
-                  &quot;हुनर है तो कदर है&quot;
+                {/* Highlighted Crisp "Hunar Hai To Kadar Hai" Badge */}
+                <span className="inline-flex items-center gap-1 bg-amber-400 text-slate-950 font-black text-xs px-2.5 py-0.5 rounded-md shadow-sm border border-amber-500">
+                  ★ &quot;हुनर है तो कदर है&quot;
                 </span>
               </div>
 

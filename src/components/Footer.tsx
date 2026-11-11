@@ -41,8 +41,10 @@ export default function Footer() {
               Partner of the National Digital Literacy Mission (NDLM). Committed to delivering high-quality, practical computer literacy, financial accounting (Tally & GST), and competitive computer credentials to empower rural and urban youth.
             </p>
 
-            <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1 text-xs">
-              <p className="text-amber-400 font-bold font-hind">&quot;हुनर है तो कदर है&quot;</p>
+            <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5 text-xs">
+              <span className="inline-block bg-amber-400 text-slate-950 font-black text-xs px-2.5 py-0.5 rounded shadow-sm">
+                ★ &quot;हुनर है तो कदर है&quot;
+              </span>
               <p className="text-slate-400">Center Code: <span className="text-white font-mono font-bold">CNET-LDH-01</span></p>
             </div>
           </div>
